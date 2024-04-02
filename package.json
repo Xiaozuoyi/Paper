@@ -18,7 +18,7 @@
     "@fontsource/lxgw-wenkai": "^5.0.1",
     "astro": "^4.5.9",
     "astro-robots-txt": "^1.0.0",
-    "astro-seo": "^0.8.0",
+    "astro-seo": "^0.8.3",
     "typescript": "^5.4.3",
     "vite": "^5.0.12"
   },
