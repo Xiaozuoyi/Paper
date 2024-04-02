@@ -1,21 +1,21 @@
 export const THEME_CONFIG: App.Locals['config'] = {
   /** blog title */
-  title: "活版印字",
+  title: "聴雨书社",
   /** your name */
-  author: "Typography",
+  author: "Evans Musk",
   /** website description */
-  desc: "Rediscory the beauty of typography",
+  desc: "Evans, a personal blog site",
   /** your deployed domain */
   website: "https://astro-theme-typography.vercel.app/",
   /** your locale */
-  locale: "en-us",
+  locale: "zh-cn",
   /** theme style */
   themeStyle: "light",
   /** your socials */
   socials: [
     {
       name: "github",
-      href: "https://github.com/moeyua/astro-theme-typography",
+      href: "https://github.com/EvansMusk",
     },
     {
       name: "rss",
@@ -23,7 +23,7 @@ export const THEME_CONFIG: App.Locals['config'] = {
     },
     {
       name: "twitter",
-      href: "https://github.com/moeyua/astro-theme-typography",
+      href: "https://twitter.com/Tsing_Danny",
     },
     {
       name: "mastodon",
@@ -32,7 +32,7 @@ export const THEME_CONFIG: App.Locals['config'] = {
   ],
   /** your header info */
   header: {
-    twitter: "@moeyua13",
+    twitter: "@Tsing_Danny",
   },
   /** your navigation links */
   navs: [
@@ -55,7 +55,7 @@ export const THEME_CONFIG: App.Locals['config'] = {
   ],
   /** your category name mapping, which the `path` will be shown in the url */
   category_map: [
-    {name: "胡适", path: "hu-shi"},
+    // {name: "胡适", path: "hu-shi"},
   ]
 }
 
