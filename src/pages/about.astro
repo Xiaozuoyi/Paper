@@ -1,7 +1,35 @@
 ---
-import LayoutDefault from "~/layouts/LayoutDefault.astro"
+import LayoutDefault from "~/layouts/LayoutDefault.astro";
 ---
 
 <LayoutDefault>
-  
+  <h1 class="post-title!">关于我</h1>
+  <ul class="ml-6 my-6" un-flex="~ col gap-5">
+    <li>开源爱好者，目前主要从事前端开发工作。</li>
+    <li>热爱编程，喜欢尝试新技术，喜欢折腾，喜欢分享。</li>
+    <li>业余时间喜欢看书、看电影、听音乐、健身、跑步。</li>
+    <li>努力成为一名全栈工程师，早日加入数字游民的行列，实现自由职业梦想。</li>
+  </ul>
+  <h2 class="post-title">关于博客</h2>
+  <ul class="ml-6 my-6" un-flex="~ col gap-5">
+    <li>本博客基于 Astro 构建，使用 Markdown 语法编写文章。</li>
+    <li>
+      <a
+        href="https://github.com/moeyua/astro-theme-typography"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        博客主题
+      </a>
+    </li>
+    <li>博客源码托管在 GitHub，使用 GitHub Actions 自动部署到 GithubPage。</li>
+  </ul>
+
+  <h2 class="post-title">关于内容</h2>
+  <ul class="ml-6 my-6" un-flex="~ col gap-5">
+    <li>
+      博客内容主要包括前端开发、后端开发、数据库、操作系统、网络、算法等方面。
+    </li>
+    <li>博客内容主要来源于工作中遇到的问题和解决方案，以及一些技术分享。</li>
+  </ul>
 </LayoutDefault>
