@@ -7,12 +7,12 @@ import {
 import transformerDirectives from "@unocss/transformer-directives";
 import { THEME_CONFIG } from "./src/theme.config";
 
-const { socials, themeStyle } = THEME_CONFIG;
+const {socials, themeStyle} = THEME_CONFIG;
 
 let foreground = "#2e405b";
 let background = "#ffffff";
 
-if (THEME_CONFIG.themeStyle === 'dark') {
+if(THEME_CONFIG.themeStyle === 'dark') {
   foreground = "#ffffff";
   background = "#2e405b";
 }
