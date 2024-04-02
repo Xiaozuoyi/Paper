@@ -18,7 +18,7 @@
     "@fontsource/lxgw-wenkai": "^5.0.1",
     "astro": "^4.5.9",
     "astro-robots-txt": "^1.0.0",
-    "astro-seo": "^0.8.0",
+    "astro-seo": "^0.8.3",
     "typescript": "^5.4.3",
     "vite": "^5.0.12"
   },
@@ -29,8 +29,8 @@
     "@types/sanitize-html": "^2.9.5",
     "@unocss/reset": "^0.58.5",
     "@unocss/transformer-directives": "^0.58.5",
-    "markdown-it": "^14.0.0",
     "sanitize-html": "^2.13.0",
+    "markdown-it": "^14.1.0",
     "unocss": "^0.58.9"
   }
 }
