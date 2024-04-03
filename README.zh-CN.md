@@ -1,7 +1,7 @@
 # 活版印字
 
 <p align='center'>
-  <img src='./public/typograph-og.jpg' alt='Typography' width='600'/>
+  <img src='./public/typograph.png' alt='Typography'/>
 </p>
 <h6 align='center'>
 <a href="https://astro-theme-typography.vercel.app/">在线预览</a>
