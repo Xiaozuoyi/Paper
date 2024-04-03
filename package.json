@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
+    "@astrojs/mdx": "^2.2.3",
     "@astrojs/rss": "^4.0.4",
     "@astrojs/sitemap": "^3.0.5",
     "@fontsource/lxgw-wenkai": "^5.0.1",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.64",
+    "@shikijs/transformers": "^1.2.3",
     "@types/markdown-it": "^13.0.7",
     "@types/node": "^20.11.22",
     "@types/sanitize-html": "^2.9.5",

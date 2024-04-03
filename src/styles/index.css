@@ -80,3 +80,13 @@ article.heti a code:hover {
   color: #f9f2f4;
   background-color: #c7254e;
 }
+  .astro-code,
+  .astro-code span{
+    font-style: var(--shiki-fontStyle)!important;
+    font-weight: 300!important;
+    font-family:"Cascadia Code", "Fira Code", "JetBrains Mono"!important;
+    text-decoration: var(--shiki-text-decoration)!important;
+  }
+  .heti p img{
+    @apply rounded-xl;
+  }

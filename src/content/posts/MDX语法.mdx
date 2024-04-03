@@ -1,0 +1,79 @@
+---
+title: mdx语法介绍
+pubDate: 2024-04-03 08:00:00
+categories: ["技术"]
+description: 'MDX 是一种 Markdown 语法扩展，它允许在 Markdown 中使用 JSX 语法。'
+---
+<div style={{ color: 'red',fontSize:"18px" }}>
+  <p>
+    MDX代码不能直接在Markdown中使用，需要一个支持MDX的解析器，比如Gatsby、Next.js等。
+  </p>
+</div>
+## 1.Markdown语法
+MDX 完全兼容标准的Markdown语法。
+```mdx
+# 这是一个一级标题
+
+## 这是一个二级标题
+
+- 列表项1
+- 列表项2
+
+**这是粗体文本**
+
+_这是斜体文本_
+```
+
+## 2. 嵌入 JSX
+你可以直接在MDX文件中嵌入 JSX。
+```mdx
+export default () => <div>Hello, world!</div>
+```
+
+## 3. 嵌入组件
+你可以在MDX文件中引入组件，并可以像在jsx中一样传递props。
+```mdx
+import Chart from './Chart'
+
+<Chart type="bar" data={myChartData} />
+```
+## 4.导出元数据
+你可以在MDX文件中导出元数据，这些元数据可以被构建系统使用。
+```mdx
+export const metadata = {
+  title: 'MDX Introduction',
+  tags: ['mdx', 'guide']
+};
+
+# MDX Introduction
+```
+## 5.使用 Markdown 和 JSX 混合内容
+
+```mdx
+# 今天的天气
+
+今天的天气是晴朗的，适合出去散步。
+
+<MyWeatherComponent city="San Francisco" />
+
+接下来是本周的天气预报：
+
+<WeatherForecast />
+```
+## 6.JavaScript 表达式
+你可以在MDX中使用JavaScript表达式。
+```mdx
+现在时间是 {new Date().toLocaleTimeString()}.
+
+<Chart data={[5, 10, 15, 20]} />
+```
+现在时间是{new Date().toLocaleTimeString()}
+
+## 7.使用 Markdown 格式的组件
+使用 Markdown 格式的组件
+```mdx
+<MyComponent>
+  # 这是一个标题
+  这是一个段落。
+</MyComponent>
+```
