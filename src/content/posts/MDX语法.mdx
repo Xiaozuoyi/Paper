@@ -5,11 +5,18 @@ categories:
   - 技术
 description: 'MDX 是一种 Markdown 语法扩展，它允许在 Markdown 中使用 JSX 语法。'
 ---
-<div style={{ color: 'red',fontSize:"18px" }}>
-  <p>
-    MDX代码不能直接在Markdown中使用，需要一个支持MDX的解析器，比如Gatsby、Next.js等。
-  </p>
-</div>
+import  Prompt  from '~/components/Prompt.astro';
+
+<Prompt template={"info"}>
+  MDX代码不能直接在Markdown中使用，需要一个支持MDX的解析器，比如Gatsby、Next.js等。
+  ```json
+  {
+    "name": "MDX",
+    "version": "1.0.0"
+  }
+  ```
+</Prompt>
+
 ## 1.Markdown语法
 MDX 完全兼容标准的Markdown语法。
 ```mdx
@@ -78,3 +85,4 @@ export const metadata = {
   这是一个段落。
 </MyComponent>
 ```
+

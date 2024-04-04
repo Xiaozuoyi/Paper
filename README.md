@@ -5,7 +5,7 @@
 </p>
 
 <h6 align='center'>
-<a href="https://astro-theme-typography.vercel.app/">Live Demo</a>
+<a href="https://paper-eta.vercel.app/">Live Demo</a>
 </h6>
 <h5 align='center'>
 <b>This work is rewrite from <a href="https://github.com/sumimakito/hexo-theme-typography">hexo-theme-Typography</a></b>
