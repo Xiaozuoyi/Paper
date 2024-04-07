@@ -58,7 +58,7 @@ const { translate: t } = Astro.locals;
   });
 
   const codeBlocks = Array.from(document.querySelectorAll("pre"));
-  const icon = "<div class='i-mdi-content-copy icon text-white'></div>";
+  const icon = "<div class='i-mdi-content-copy text-white icon w-5 h-5'></div>";
   for (let codeBlock of codeBlocks) {
     let wrapper = document.createElement("div");
     wrapper.className = "code-container";
@@ -92,6 +92,10 @@ const { translate: t } = Astro.locals;
     justify-content: center;
     align-items: center;
     border-radius: 0.25rem;
+    display: none;
+  }
+  .code-container:hover .clipboard-copy {
+    display: block;
   }
 
   .clipboard-copy:hover {

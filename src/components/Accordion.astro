@@ -1,0 +1,65 @@
+---
+type AccordionItem = {
+  title: string;
+  open: boolean;
+};
+
+const { title, open } = Astro.props as AccordionItem;
+---
+
+<section>
+  <div
+    class="bg-slate-100 border-2 border-slate-300 border-solid rounded-lg p-4"
+  >
+    <button class="accordion-toggle w-full flex items-center justify-between">
+      <span class="text-lg font-black">{title}</span>
+      <div class="i-mdi:chevron-down-circle-outline size-6 down"></div>
+      <div class="i-mdi:chevron-up-circle-outline size-6 hidden up"></div>
+    </button>
+    <div class=`accordion-content ${open?"open":""}`>
+      <div class="mb-2 mt-5">
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll(".accordion-toggle").forEach((button) => {
+    button.addEventListener("click", function (e) {
+      const target = e.currentTarget as HTMLElement | any;
+      if (target !== null) {
+        const contentDiv = target.nextElementSibling;
+        const isOpen = contentDiv.classList.contains("open");
+        document.querySelectorAll(".accordion-content").forEach((div: any) => {
+          div.classList.remove("open");
+          div.style.maxHeight = null;
+          // 切换箭头图标
+          target.querySelector(".down").classList.toggle("hidden");
+          target.querySelector(".up").classList.toggle("hidden");
+        });
+        // 如果当前accordion content是关闭的，那么打开它
+        if (!isOpen) {
+          contentDiv.classList.add("open");
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .accordion-content.open {
+    max-height: 1000px;
+  }
+  .accordion-content:not(.open) {
+    transition: max-height 0.3s ease;
+  }
+  .accordion-toggle {
+    cursor: pointer;
+  }
+</style>

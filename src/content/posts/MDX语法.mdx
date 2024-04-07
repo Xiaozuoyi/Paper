@@ -5,7 +5,8 @@ categories:
   - 技术
 description: 'MDX 是一种 Markdown 语法扩展，它允许在 Markdown 中使用 JSX 语法。'
 ---
-import  Prompt  from '~/components/Prompt.astro';
+import Prompt from '~/components/Prompt.astro';
+import Accordion from '~/components/Accordion.astro';
 
 <Prompt template={"info"}>
   MDX代码不能直接在Markdown中使用，需要一个支持MDX的解析器，比如Gatsby、Next.js等。
@@ -16,6 +17,21 @@ import  Prompt  from '~/components/Prompt.astro';
   }
   ```
 </Prompt>
+
+<Accordion title="MDX介绍" open="true">
+  <details>
+    <summary>MDX 是什么？</summary>
+    <p>MDX 是一种 Markdown 语法扩展，它允许在 Markdown 中使用 JSX 语法。</p>
+  </details>
+  <details>
+    <summary>MDX 有什么优点？</summary>
+    <p>MDX 可以让你在 Markdown 中使用 JSX 语法，这样你就可以在 Markdown 文件中直接嵌入 React 组件。</p>
+  </details>
+  <details>
+    <summary>MDX 怎么用？</summary>
+    <p>MDX 代码不能直接在 Markdown 中使用，需要一个支持 MDX 的解析器，比如 Gatsby、Next.js 等。</p>
+  </details>
+</Accordion>
 
 ## 1.Markdown语法
 MDX 完全兼容标准的Markdown语法。
@@ -31,7 +47,22 @@ MDX 完全兼容标准的Markdown语法。
 
 _这是斜体文本_
 ```
-
+<Accordion title="测试标题">
+  <details>
+    <summary>这是一个一级标题</summary>
+    <p>这是一个二级标题</p>
+  </details>
+  <details>
+    <summary>列表</summary>
+    <p>1. 列表项1</p>
+    <p>2. 列表项2</p>
+  </details>
+  <details>
+    <summary>文本</summary>
+    <p><strong>这是粗体文本</strong></p>
+    <p><em>这是斜体文本</em></p>
+  </details>
+</Accordion>
 ## 2. 嵌入 JSX
 你可以直接在MDX文件中嵌入 JSX。
 ```mdx

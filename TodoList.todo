@@ -1,0 +1,123 @@
+{
+  "todotree": {
+    "tree": [
+      {
+        "key": 1712334411334,
+        "children": [
+          {
+            "key": 1712334517898,
+            "children": [],
+            "todo": {
+              "content": "增加NPM字体包，防止代码块缺失字体",
+              "id": 1712334517898,
+              "level": "default",
+              "done": true,
+              "start": 1712334517898,
+              "focus": false,
+              "end": 1712374801868
+            }
+          },
+          {
+            "key": 1712334556824,
+            "children": [],
+            "todo": {
+              "content": "增加手风琴的下拉组件",
+              "id": 1712334556824,
+              "level": "default",
+              "done": false,
+              "start": 1712334556824
+            }
+          },
+          {
+            "key": 1712334594780,
+            "children": [],
+            "todo": {
+              "content": "增加代码块的编程语言显示",
+              "id": 1712334594780,
+              "level": "default",
+              "done": true,
+              "start": 1712334594780,
+              "focus": false,
+              "end": 1712478575152
+            }
+          },
+          {
+            "key": 1712334626103,
+            "children": [],
+            "todo": {
+              "content": "增加过渡动画，参考antony Fu博客",
+              "id": 1712334626103,
+              "level": "default",
+              "done": false,
+              "start": 1712334626103
+            }
+          },
+          {
+            "key": 1712334667257,
+            "children": [],
+            "todo": {
+              "content": "优化代码块的复制事件代码",
+              "id": 1712334667257,
+              "level": "default",
+              "done": true,
+              "start": 1712334667257,
+              "focus": false,
+              "end": 1712478579350
+            }
+          },
+          {
+            "key": 1712334802170,
+            "children": [],
+            "todo": {
+              "content": "去除多余的字体文件，优化项目体积",
+              "id": 1712334802170,
+              "level": "default",
+              "done": true,
+              "start": 1712334802170,
+              "focus": false,
+              "end": 1712478581847
+            }
+          }
+        ],
+        "todo": {
+          "content": "04-06",
+          "id": 1712334411334,
+          "level": "danger",
+          "done": false,
+          "start": 1712334411334,
+          "focus": false,
+          "end": 1712334859971,
+          "date": "1712332800,1712505599"
+        }
+      }
+    ],
+    "expandKeys": [
+      1712334411334,
+      1712334626103,
+      1712334802170
+    ],
+    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
+    "add_mode": "bottom",
+    "virtual": false,
+    "timelines": [
+      1712334626103,
+      1712334411334
+    ],
+    "showLine": false,
+    "playFontSize": 24,
+    "tags": {
+      "1712335218929": {
+        "label": "未完成",
+        "color": "#f9cd2f",
+        "fontColor": "#d8cbcb",
+        "level": 0
+      }
+    },
+    "title": "TodoList",
+    "autoSort": false,
+    "showEndTime": false,
+    "simpleMode": false,
+    "lang": "zh-cn",
+    "version": "1712478581903"
+  }
+}

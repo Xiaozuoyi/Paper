@@ -3,6 +3,7 @@ import UnoCSS from 'unocss/astro';
 import { THEME_CONFIG } from "./src/theme.config";
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
+import { transformerEnhanser } from './src/utils/shiki';
 import {
   transformerMetaHighlight,
   transformerMetaWordHighlight,
@@ -31,7 +32,8 @@ export default defineConfig({
         transformerNotationErrorLevel(),
         transformerNotationFocus(),
         transformerNotationHighlight(),
-        transformerNotationWordHighlight()
+        transformerNotationWordHighlight(),
+        transformerEnhanser()
       ]
     }
   },
