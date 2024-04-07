@@ -13,10 +13,16 @@ const { title, open } = Astro.props as AccordionItem;
   >
     <button class="accordion-toggle w-full flex items-center justify-between">
       <span class="text-lg font-black">{title}</span>
-      <div class="i-mdi:chevron-down-circle-outline size-6 down"></div>
-      <div class="i-mdi:chevron-up-circle-outline size-6 hidden up"></div>
+      <div
+        class={`i-mdi:chevron-down-circle-outline size-6 ${open ? "hidden" : ""} down`}
+      >
+      </div>
+      <div
+        class={`i-mdi:chevron-up-circle-outline size-6 ${open ? "" : "hidden"} up`}
+      >
+      </div>
     </button>
-    <div class=`accordion-content ${open?"open":""}`>
+    <div class={`accordion-content ${open ? "open" : ""}`}>
       <div class="mb-2 mt-5">
         <slot />
       </div>
@@ -25,25 +31,41 @@ const { title, open } = Astro.props as AccordionItem;
 </section>
 
 <script>
-  document.querySelectorAll(".accordion-toggle").forEach((button) => {
-    button.addEventListener("click", function (e) {
-      const target = e.currentTarget as HTMLElement | any;
-      if (target !== null) {
-        const contentDiv = target.nextElementSibling;
-        const isOpen = contentDiv.classList.contains("open");
-        document.querySelectorAll(".accordion-content").forEach((div: any) => {
-          div.classList.remove("open");
-          div.style.maxHeight = null;
-          // 切换箭头图标
-          target.querySelector(".down").classList.toggle("hidden");
-          target.querySelector(".up").classList.toggle("hidden");
-        });
-        // 如果当前accordion content是关闭的，那么打开它
-        if (!isOpen) {
-          contentDiv.classList.add("open");
-        }
-      }
-    });
+  // 用于设置手风琴内容最大高度的函数
+  function setMaxHeight(content: HTMLElement, isOpen: boolean): void {
+    content.style.maxHeight = isOpen ? `${content.scrollHeight}px` : "";
+  }
+
+  // 切换手风琴状态的函数
+  function toggleAccordion(button: HTMLElement): void {
+    const content = button.nextElementSibling as HTMLElement;
+    const isContentOpen = content.classList.toggle("open");
+    setMaxHeight(content, isContentOpen);
+
+    button.querySelector(".down")!.classList.toggle("hidden", isContentOpen);
+    button.querySelector(".up")!.classList.toggle("hidden", !isContentOpen);
+  }
+
+  // 初始化手风琴切换
+  const accordionToggles = document.querySelectorAll(".accordion-toggle");
+  accordionToggles.forEach((button) => {
+    // 为每个手风琴设置初始状态
+    const content = button.nextElementSibling as HTMLElement;
+    const isContentInitiallyOpen = content.classList.contains("open");
+    setMaxHeight(content, isContentInitiallyOpen);
+
+    // 设置图标的初始可见度
+    button
+      .querySelector(".down")!
+      .classList.toggle("hidden", isContentInitiallyOpen);
+    button
+      .querySelector(".up")!
+      .classList.toggle("hidden", !isContentInitiallyOpen);
+
+    // 附加点击事件监听器，以便在点击时切换手风琴
+    button.addEventListener("click", () =>
+      toggleAccordion(button as HTMLElement),
+    );
   });
 </script>
 
@@ -51,12 +73,6 @@ const { title, open } = Astro.props as AccordionItem;
   .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-  .accordion-content.open {
-    max-height: 1000px;
-  }
-  .accordion-content:not(.open) {
     transition: max-height 0.3s ease;
   }
   .accordion-toggle {
