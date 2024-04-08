@@ -11,7 +11,7 @@ import {
   transformerNotationErrorLevel,
   transformerNotationFocus,
   transformerNotationHighlight,
-  transformerNotationWordHighlight
+  transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 
 import mdx from "@astrojs/mdx";

@@ -22,7 +22,7 @@ const { title, open } = Astro.props as AccordionItem;
       >
       </div>
     </button>
-    <div class={`accordion-content ${open ? "open" : ""}`}>
+    <div class={`accordion-content ${open ? "open" : ""} max-w-[37.5rem]`}>
       <div class="mb-2 mt-5">
         <slot />
       </div>
@@ -33,7 +33,7 @@ const { title, open } = Astro.props as AccordionItem;
 <script>
   // 用于设置手风琴内容最大高度的函数
   function setMaxHeight(content: HTMLElement, isOpen: boolean): void {
-    content.style.maxHeight = isOpen ? `${content.scrollHeight}px` : "";
+    content.style.maxHeight = isOpen ? "1000px" : "0";
   }
 
   // 切换手风琴状态的函数

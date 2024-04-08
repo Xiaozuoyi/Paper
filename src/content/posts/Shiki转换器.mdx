@@ -1,0 +1,103 @@
+---
+title: Shiki转换器
+pubDate: 2024-04-08 10:39:45
+categories: 
+  - 技术
+description: '关于添加Shiki转换器的说明'
+---
+import Prompt from '~/components/Prompt.astro';
+
+## 什么是Shiki转换器
+  Shiki 使用了[`hast`](https://github.com/syntax-tree/hast)(HTML Abstract Syntax Tree),这是一种用于 HTML 的 抽象语法树 (AST) 格式，用来处理结果并生成 HTML 字符串。
+  <Prompt template="info">
+    当处理 HTML 或者类似 HTML 的标记语言时，hast 可以帮助我们解析、操作和生成 HTML。它可以将 HTML 字符串解析为一个易于操作的对象结构，我们可以在这个结构上进行各种操作，例如添加、删除或修改节点，然后再将其转换回 HTML 字符串。
+  </Prompt>
+
+## 如何添加Shiki转换器
+  在 Astro 中，我们可以通过添加 Shiki 转换器来实现代码高亮。在 Astro 项目中，我们可以通过以下步骤来添加 Shiki 转换器：
+  - 安装 `@shikijs/transformers` 包 (常用转换器)
+  - 在 `astro.config.ts` 中添加 Shiki 转换器
+  ```ts
+  import { transformerMetaHighlight,... } from '@shiki/transformer';
+  export default defineConfig({
+    markdown:{
+      shikiConfig:{
+        transformers:{
+          transformerMetaHighlight(),
+          ...
+        }
+      }
+    }
+  });
+  ```
+## 常用转换器
+<Prompt template="warning">
+  无样式：
+  转换器只应用到类，并不带有样式，你可以提供自己的 CSS 规则来样式化它们。
+</Prompt>
+
+### transformerNotationDiff
+  - 用于高亮显示代码中的增删行。
+  - 使用 [!code ++] 和 [!code --] 来标记增删的行。
+
+```ts
+  console.log('hewwo') // [!code --]
+  console.log('hello') // [!code ++] 
+  console.log('goodbye')
+```
+### transformerNotationHighlight
+  - 用于高亮显示代码中的特定行。
+  - 使用 [!code highlight:3] 来标记需要高亮的行。
+
+```ts
+// [!code highlight:3]
+console.log('Highlighted')
+console.log('Highlighted')
+console.log('Not highlighted')
+```
+### transformerNotationWordHighlight
+  - 用于高亮显示代码中的特定单词。
+  - 使用 [!code word:Hello] 来标记需要高亮的单词。
+
+```ts
+// [!code word:Hello]
+const message = 'Hello World'
+console.log(message) // prints Hello World
+```
+### transformerNotationFocus
+  - 用于聚焦显示代码中的特定行。
+  - 使用 [!code focus] 来聚焦显示行
+
+```ts
+console.log('Not focused');
+console.log('Focused') // [!code focus]
+console.log('Not focused');
+```
+
+### transformerNotationError
+  - 用于指定行的日志等级
+  - 使用 [!code error] 来标记错误行。
+  - 使用 [!code warning] 来标记警告行。
+
+```ts
+console.log('No errors or warnings')
+console.error('Error') // [!code error]
+console.warn('Warning') // [!code warning]
+```
+### transformerMetaHighlight
+  - 根据代码片段上提供的元字符串，高亮显示行。
+
+```js {1,3-4}
+console.log('1')
+console.log('2')
+console.log('3')
+console.log('4')
+```
+### transformerMetaWordHighlight
+  - 根据代码片段上提供的元字符串，高亮显示单词。
+  
+```js /Hello/
+const msg = 'Hello World'
+console.log(msg)
+console.log(msg) // 打印 Hello World
+```

@@ -1,5 +1,8 @@
 ---
-const { template } = Astro.props;
+interface Props {
+  template: "default" | "warning" | "danger" | "success" | "info";
+}
+const { template } = Astro.props
 const templateConfig = {
   default: {
     icon: "i-mdi:alert-circle-outline",
@@ -53,7 +56,8 @@ const currentConfig =
 ---
 
 <div
-  class=`p-4
+  class=`
+  p-4
   rounded-xl
   border
   border-3

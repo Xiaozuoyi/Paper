@@ -8,7 +8,7 @@ interface ShikiOptions {
   languageHint: string | boolean
 }
 
-const languageHintDefaultClass = 'absolute right-2 top-2 text-base group-hover:hidden text-white  z-50'
+const languageHintDefaultClass = 'absolute right-3 top-1 text-base group-hover:hidden text-white  z-50'
 export function transformerEnhanser(options?:ShikiOptions): ShikiTransformer {
   if (!options) {
     options = {

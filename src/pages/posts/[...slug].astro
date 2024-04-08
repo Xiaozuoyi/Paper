@@ -83,19 +83,11 @@ const { translate: t } = Astro.locals;
     position: relative;
   }
   .clipboard-copy {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 1.75rem;
-    height: 1.75rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.25rem;
+    @apply absolute top-2 right-2 size-7 flex justify-center items-center rounded z-60;
     display: none;
   }
   .code-container:hover .clipboard-copy {
-    display: block;
+    display: flex;
   }
 
   .clipboard-copy:hover {
