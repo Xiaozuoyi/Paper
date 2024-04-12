@@ -1,0 +1,73 @@
+---
+title: Rust基础
+pubDate: 2024-04-12 22:40:57
+categories: 
+  - rust
+description: "rust入门基础知识"
+---
+## 安装
+`rustup` 是 Rust 的安装程序，也是它的版本管理程序。
+```shell
+$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+```
+安装完成后，需要重启终端，以便 `rustup` 命令生效。
+
+更新 `rust`
+```shell
+$ rustup update
+```
+
+卸载 `rust`
+```shell
+$ rustup self uninstall
+```
+
+检查 `rust` 版本
+```shell
+$ rustc --version
+```
+
+查看本地文档
+```shell
+$ rustup doc
+```
+
+## Cargo 包管理工具
+`Cargo` 是 Rust 的构建系统和包管理工具。
+```shell
+$ cargo new hello_cargo # 创建一个新的项目
+$ cd hello_cargo #进入项目目录
+```
+> Rust 项目主要分为两个类型：bin 和 lib，前者是一个可运行的项目，后者是一个依赖库项目。
+`Cargo` 项目的目录结构
+```shell
+$ tree
+.
+├── .git
+├── .gitignore
+├── Cargo.toml
+└── src
+    └── main.rs
+```
+
+构建项目
+```shell
+$ cargo build
+```
+运行项目
+```shell
+$ cargo run
+```
+检查项目
+```shell
+$ cargo check
+```
+发布项目
+```shell
+$ cargo build --release
+```
+
+> **说明**
+> - `Cargo.toml` 是一个配置文件，用于描述项目的元数据和依赖项。
+> - `src/main.rs` 是一个 Rust 源文件，是一个可执行项目的入口文件。
+
