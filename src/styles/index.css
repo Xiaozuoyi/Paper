@@ -155,9 +155,6 @@ article.heti a code:hover {
   .slide-enter-content > *:nth-child(20) { --enter-stage: 20; }
 }
 
-.heti p{
-  @apply mt-5! mb-0!;
-}
 .heti code .diff {
   display: inline-block;
   background-color: var(--diff-background);
