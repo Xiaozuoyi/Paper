@@ -29,7 +29,7 @@
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.64",
     "@shikijs/transformers": "^1.2.3",
-    "@types/markdown-it": "^13.0.7",
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^20.11.22",
     "@types/sanitize-html": "^2.9.5",
     "@unocss/reset": "^0.58.5",
